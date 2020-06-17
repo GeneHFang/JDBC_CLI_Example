@@ -29,7 +29,7 @@ public class ExampleQuery {
            
             //Step 5) Display results
             while (rs.next()){
-                System.out.print(rs.getString(1));
+                System.out.print(rs.getString(1)); // Columns are 1-indexed, so we start at 1
                 //and other sql getters : getInt(), getDate()
                 System.out.println(rs.getDate(4));
             }  
