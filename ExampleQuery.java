@@ -8,8 +8,11 @@ public class ExampleQuery {
     //IN CLI: java ExampleQuery <url> <user> <pw> <driver> <SQL query as string>
     public static void main(String[] args) {
         
+        //The data
         ResultSet rs = null;
+        //The query 
         Statement stmt = null;
+        //The socket connection
         Connection conn = null;
 
         String _url = args[0];
@@ -41,6 +44,7 @@ public class ExampleQuery {
         //clean up resources
         finally{
             try {
+                //always clean up in REVERSE order of opening
                 if (rs!=null) rs.close();
                 if (stmt!=null) stmt.close();
                 if (conn!=null) conn.close();
